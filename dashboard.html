@@ -1464,15 +1464,18 @@ function filterBdRaw(rawArr, keyFn){
   let totalSpend=0;
   filtered.forEach(r=>{
     const k=keyFn(r);
-    if(!map[k]) map[k]={n:k,spend:0,ld:0};
+    if(!map[k]) map[k]={n:k,spend:0,ld:0,eng:0,rch:0};
     map[k].spend+=r.sp; map[k].ld+=r.ld;
+    map[k].eng+=(r.eng||0); map[k].rch+=(r.rch||0);
     totalSpend+=r.sp;
   });
   return Object.values(map)
     .filter(v=>v.spend>0)
     .map(v=>({...v,spend:r2(v.spend),
       pct:totalSpend>0?r2(v.spend/totalSpend*100):null,
-      cpl:v.ld>0?r2(v.spend/v.ld):null}))
+      cpl:v.ld>0?r2(v.spend/v.ld):null,
+      cpe:v.eng>0?r2(v.spend/v.eng):null,
+      cpm:v.rch>0?r2(v.spend/v.rch*1000):null}))
     .sort((a,b)=>b.ld-a.ld);
 }
 
@@ -1832,6 +1835,15 @@ function renderSeg(){
   const bd=getMBD();
   if(!bd) return;
 
+  // Configuração dinâmica por chartMode
+  const isEng = chartMode==='engajamento';
+  const isRec = chartMode==='reconhecimento';
+  const mCfg = isEng
+    ? {barLabel:'Engaj.',  barFn:r=>r.eng||0, lineLabel:'CPE', lineFn:r=>r.cpe, colMain:'Engaj.', colLine:'CPE'}
+    : isRec
+    ? {barLabel:'Alcance', barFn:r=>r.rch||0, lineLabel:'CPM', lineFn:r=>r.cpm, colMain:'Alcance',colLine:'CPM'}
+    : {barLabel:'Leads',   barFn:r=>r.ld||0,  lineLabel:'CPL', lineFn:r=>r.cpl, colMain:'Leads',  colLine:'CPL'};
+
   function segBlock(tableId, chartId, data, lbl){
     const tEl=document.getElementById(tableId);
     if(!tEl) return;
@@ -1840,23 +1852,21 @@ function renderSeg(){
       tEl.innerHTML='<div style="padding:8px;font-size:11px;color:var(--muted)">Sem dados</div>';
       return;
     }
-    // Tabela com %
     tEl.innerHTML=`<table style="width:100%;table-layout:fixed">
       <thead><tr>
         <th style="width:40%">${lbl}</th>
         <th class="num" style="width:30%">Invest.</th>
-        <th class="num" style="width:15%">Lds</th>
-        <th class="num" style="width:15%">CPL</th>
+        <th class="num" style="width:15%">${mCfg.colMain}</th>
+        <th class="num" style="width:15%">${mCfg.colLine}</th>
       </tr></thead>
       <tbody>${data.map(r=>`<tr>
         <td style="font-size:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:0" title="${r.n}">${r.n}</td>
         <td class="num" style="font-size:10px;white-space:nowrap">${fR(r.spend)} <span style="color:var(--muted2);font-size:9px">${totalSpend>0?'('+r2(r.spend/totalSpend*100).toFixed(1)+'%)':''}</span></td>
-        <td class="num" style="font-size:10px">${fN(r.ld)}</td>
-        <td class="num ${cplCls(r.cpl)}" style="font-size:10px">${fR(r.cpl)}</td>
+        <td class="num" style="font-size:10px">${fN(mCfg.barFn(r))}</td>
+        <td class="num ${cplCls(mCfg.lineFn(r))}" style="font-size:10px">${fR(mCfg.lineFn(r))}</td>
       </tr>`).join('')}</tbody>
     </table>`;
 
-    // Gráfico Chart.js — barras para leads, linha para CPL
     const cEl=document.getElementById(chartId);
     if(!cEl) return;
     dc(chartId);
@@ -1864,40 +1874,33 @@ function renderSeg(){
     const accent=COR_ACENTO;
     const accentRgb=accent.replace('#','').match(/.{2}/g)?.map(h=>parseInt(h,16))||[102,89,165];
     const accentAlpha=`rgba(${accentRgb.join(',')},0.75)`;
-    const accentLine=`rgba(${accentRgb.join(',')},1)`;
-    const maxLdVal = Math.max(...data.map(r=>r.ld||0), 1);
-    const sugMaxLd = Math.ceil(maxLdVal * 1.3); // 30% de margem para rótulos
-    const maxCplVal = Math.max(...data.map(r=>r.cpl||0), 1);
-    const sugMaxCpl = maxCplVal * 1.3; // 30% de margem para rótulos CPL
-    const txtColor = DARK() ? '#e5e7eb' : '#111827';
+    const barVals=data.map(mCfg.barFn);
+    const lineVals=data.map(mCfg.lineFn);
+    const maxBar=Math.max(...barVals,1);
+    const maxLine=Math.max(...lineVals.filter(v=>v!=null),1);
+    const txtColor=DARK()?'#e5e7eb':'#111827';
     CH[chartId]=new Chart(cEl,{
-      data:{
-        labels,
-        datasets:[
-          {type:'bar',label:'Leads',data:data.map(r=>r.ld||0),
-           backgroundColor:accentAlpha,borderRadius:4,yAxisID:'y1',
-           datalabels:{display:showLabels,color:txtColor,font:{size:labelSize,weight:'bold'},anchor:'end',align:'top'}},
-          {type:'line',label:'CPL',data:data.map(r=>r.cpl),
-           borderColor:txtColor,backgroundColor:'transparent',
-           borderWidth:2,pointRadius:4,pointBackgroundColor:txtColor,
-           borderDash:[4,3],tension:0.3,yAxisID:'y2',spanGaps:true,
-           datalabels:{display:showLabels,color:txtColor,font:{size:labelSize,weight:'bold'},anchor:'end',align:'top',
-             formatter:v=>v!=null?fR(v):''}},
-        ]
-      },
+      data:{labels,datasets:[
+        {type:'bar',label:mCfg.barLabel,data:barVals,
+         backgroundColor:accentAlpha,borderRadius:4,yAxisID:'y1',
+         datalabels:{display:showLabels,color:txtColor,font:{size:labelSize,weight:'bold'},anchor:'end',align:'top'}},
+        {type:'line',label:mCfg.lineLabel,data:lineVals,
+         borderColor:txtColor,backgroundColor:'transparent',
+         borderWidth:2,pointRadius:4,pointBackgroundColor:txtColor,
+         borderDash:[4,3],tension:0.3,yAxisID:'y2',spanGaps:true,
+         datalabels:{display:showLabels,color:txtColor,font:{size:labelSize,weight:'bold'},anchor:'end',align:'top',
+           formatter:v=>v!=null?fR(v):''}},
+      ]},
       options:{...bo(),
         plugins:{...bo().plugins,
           legend:{display:true,position:'top',labels:{color:TXT(),boxWidth:10,font:{size:10}}}
         },
         scales:{
-          x:{grid:{display:false},ticks:{color:TXT(),font:{size:9},maxRotation:0,minRotation:0,callback:function(val,i){
-              const lbl=this.getLabelForValue(val);
-              return lbl.length>12?lbl.substring(0,12)+'…':lbl;
-            }}},
-          y1:{position:'left',beginAtZero:true,suggestedMax:sugMaxLd,
-              grid:{color:GRID()},
-              ticks:{color:TXT(),font:{size:9},stepSize:1}},
-          y2:{position:'right',beginAtZero:true,suggestedMax:sugMaxCpl,grid:{display:false},
+          x:{grid:{display:false},ticks:{color:TXT(),font:{size:9},maxRotation:0,minRotation:0,
+              callback:function(val,i){const lbl=this.getLabelForValue(val);return lbl.length>12?lbl.substring(0,12)+'…':lbl;}}},
+          y1:{position:'left',beginAtZero:true,suggestedMax:Math.ceil(maxBar*1.3),
+              grid:{color:GRID()},ticks:{color:TXT(),font:{size:9}}},
+          y2:{position:'right',beginAtZero:true,suggestedMax:maxLine*1.3,grid:{display:false},
               ticks:{color:TXT(),font:{size:9},callback:v=>fR(v)}},
         }
       }
