@@ -333,6 +333,8 @@ def meta_breakdowns(df):
             if pd.isna(r['date']): continue
             raw_ga.append({'d':r['date'].strftime('%d/%m/%Y'),'age':str(r['age']),'gen':str(r['gender']),
                            'sp':round(float(r['spend']),2),'ld':int(r['leads']),
+                           'eng':int(r.get('Action Post Engagement',0)) if 'Action Post Engagement' in r.index else 0,
+                           'rch':int(r.get('Reach (Estimated)',0)) if 'Reach (Estimated)' in r.index else 0,
                            'lct':bool(r['is_lct']),
                            'camp':str(r['Campaign Name']) if 'Campaign Name' in r.index else ''})
     raw_pt=[]
@@ -341,6 +343,8 @@ def meta_breakdowns(df):
             if pd.isna(r['date']): continue
             raw_pt.append({'d':r['date'].strftime('%d/%m/%Y'),'plat':str(r['platform']),
                            'sp':round(float(r['spend']),2),'ld':int(r['leads']),
+                           'eng':int(r.get('Action Post Engagement',0)) if 'Action Post Engagement' in r.index else 0,
+                           'rch':int(r.get('Reach (Estimated)',0)) if 'Reach (Estimated)' in r.index else 0,
                            'lct':bool(r['is_lct']),
                            'camp':str(r['Campaign Name']) if 'Campaign Name' in r.index else ''})
     result['_raw_ga']=raw_ga
