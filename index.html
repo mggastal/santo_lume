@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="shortcut icon" href="sobe.png" id="faviconLink">
-<link rel="icon" type="image/png" href="sobe.png" id="faviconLink2">
+<link rel="shortcut icon" href="santo_icon.png" id="faviconLink">
+<link rel="icon" type="image/png" href="santo_icon.png" id="faviconLink2">
 
 <title id="pageTab">Dashboard</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script>/*!
  * Chart.js v4.4.0
  * https://www.chartjs.org
@@ -45,14 +45,14 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 /* SIDEBAR */
 .sb{background:#0f1523;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto;}
 .sb-logo{display:flex;align-items:center;gap:10px;padding:18px 16px 14px;border-bottom:1px solid rgba(255,255,255,.07);}
-.logo-box{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#fff;flex-shrink:0;}
-.logo-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:#fff;}
+.logo-box{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;color:#fff;flex-shrink:0;}
+.logo-name{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:#fff;}
 .logo-sub{font-size:10px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:1.5px;}
 .sb-nav{padding:10px 8px;flex:1;}
 .sb-section{padding:16px 10px 4px;}
 .sb-platform-group{padding:4px 4px 0;}
 .sb-platform-hd{display:flex;align-items:center;gap:8px;padding:6px 10px 4px;margin-bottom:2px;}
-.sb-platform-icon{width:20px;height:20px;border-radius:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;font-family:'Syne',sans-serif;flex-shrink:0;overflow:hidden;background:transparent;}
+.sb-platform-icon{width:20px;height:20px;border-radius:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;font-family:'DM Sans',sans-serif;flex-shrink:0;overflow:hidden;background:transparent;}
 .sb-platform-lbl{font-size:10px;font-weight:700;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:1.5px;}
 .sb-item{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:7px;cursor:pointer;color:rgba(255,255,255,.45);font-size:12px;font-weight:500;transition:all .15s;margin-bottom:1px;text-decoration:none;}
 .sb-item:hover{background:rgba(255,255,255,.06);color:rgba(255,255,255,.8);}
@@ -61,7 +61,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .sb-dot{width:5px;height:5px;border-radius:50%;margin-left:auto;}
 .sb-lct{margin:0 16px 12px;padding:7px 10px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);}
 .sb-lct-lbl{font-size:9px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
-.sb-lct-val{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:#fff;}
+.sb-lct-val{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:#fff;}
 .sb-footer{padding:10px 16px 12px;border-top:1px solid rgba(255,255,255,.05);display:flex;flex-direction:column;gap:5px;}
 .wb-icon-btn{display:none;width:30px;height:30px;min-width:30px;border-radius:7px;border:1px solid var(--border);background:var(--surface2);cursor:pointer;font-size:15px;color:var(--muted);transition:all .15s;align-items:center;justify-content:center;padding:0;overflow:hidden;flex-shrink:0;}
 .wb-icon-btn.on{color:#f59e0b;border-color:#f59e0b;}
@@ -73,7 +73,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .main{display:flex;flex-direction:column;overflow-x:hidden;}
 .topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:9px 20px;display:flex;align-items:center;justify-content:space-between;position:fixed;top:0;left:210px;right:0;z-index:9000;box-shadow:0 2px 8px rgba(0,0,0,.12);gap:8px;flex-wrap:wrap;}
 .topbar-l{display:flex;align-items:center;gap:8px;flex-shrink:0;}
-.page-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;}
+.page-title{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;}
 .live-badge{display:flex;align-items:center;gap:5px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;}
 .pulse{width:5px;height:5px;border-radius:50%;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
@@ -103,7 +103,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .kpi{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px 15px;position:relative;overflow:hidden;box-shadow:var(--sh);}
 .kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--kc,#e2e8f0);}
 .kpi-lbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1.2px;font-weight:600;margin-bottom:5px;}
-.kpi-val{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;line-height:1;color:var(--kc,var(--text));margin-bottom:2px;}
+.kpi-val{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;line-height:1;color:var(--kc,var(--text));margin-bottom:2px;}
 .kpi-sub{font-size:10px;color:var(--muted);}
 .dlt{font-size:10px;font-weight:700;margin-top:3px;display:block;}
 .dlt.up{color:#2BB673;}
@@ -112,7 +112,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 
 /* FUNIL */
 .funnel-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 22px;margin-bottom:14px;box-shadow:var(--sh);}
-.funnel-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:16px;}
+.funnel-title{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;margin-bottom:16px;}
 .funnel-steps{display:flex;flex-direction:column;gap:0;}
 .f-step{display:flex;flex-direction:column;}
 .f-bar{height:40px;border-radius:7px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;transition:width .4s;min-width:110px;}
@@ -121,11 +121,11 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .f-bar-val{font-family:'DM Mono',monospace;font-size:14px;font-weight:700;color:#fff;}
 .f-between{display:flex;align-items:center;gap:8px;padding:4px 0 4px 12px;}
 .f-arrow{color:var(--muted2);font-size:14px;}
-.f-rate-txt{font-size:13px;font-weight:800;padding:2px 10px;border-radius:20px;}
+.f-rate-txt{font-size:13px;font-weight:700;padding:2px 10px;border-radius:20px;}
 
 /* CHARTS */
 .cc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:15px;box-shadow:var(--sh);min-width:0;overflow:hidden;}
-.cc-t{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;margin-bottom:2px;}
+.cc-t{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;margin-bottom:2px;}
 .cc-s{font-size:11px;color:var(--muted);margin-bottom:10px;}
 .cw{position:relative;width:100%;overflow:hidden;}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
@@ -137,12 +137,12 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .daily-row{display:grid;grid-template-columns:72px 1fr;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);margin-bottom:10px;}
 .daily-side{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px 8px;border-right:1px solid var(--border);background:var(--surface2);}
 .ds-lbl{font-size:8px;color:var(--muted2);text-transform:uppercase;letter-spacing:.8px;font-weight:700;margin-bottom:3px;text-align:center;}
-.ds-val{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;text-align:center;}
+.ds-val{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;text-align:center;}
 .daily-main{padding:12px 14px 10px 10px;}
-.daily-ttl{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--muted);margin-bottom:6px;}
+.daily-ttl{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;color:var(--muted);margin-bottom:6px;}
 
 /* SECTION */
-.sec-hd{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:10px;}
+.sec-hd{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;margin-bottom:10px;}
 .section{margin-bottom:20px;}
 
 /* TABELAS */
@@ -181,7 +181,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .seg-card thead th.num{text-align:right;}
 .seg-card tbody td{padding:6px 10px;font-size:11px;border-bottom:1px solid var(--border);}
 .seg-card tbody tr:last-child td{border-bottom:none;}
-.seg-ttl{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;margin-bottom:8px;}
+.seg-ttl{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;margin-bottom:8px;}
 
 /* PIZZA */
 .pizza-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-bottom:14px;}
@@ -197,7 +197,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 /* PESQUISA FILTROS */
 .pes-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px;}
 .filter-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:14px;box-shadow:var(--sh);}
-.filter-box-ttl{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+.filter-box-ttl{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
 .utm-groups{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .utm-grp-lbl{font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;}
 .utm-list{display:flex;flex-direction:column;gap:2px;max-height:180px;overflow-y:auto;}
@@ -272,7 +272,7 @@ details.desk-only{display:block!important;}
   font-size:13px;flex-shrink:0;
 }
 .filter-label{
-  font-family:'Syne',sans-serif;font-size:12px;font-weight:700;
+  font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;
   color:var(--text);flex:1;
 }
 .filter-count{
@@ -312,7 +312,7 @@ details.filter-highlight[open] .filter-arrow{transform:rotate(180deg);}
   font-size:13px;flex-shrink:0;
 }
 .filter-label{
-  font-family:'Syne',sans-serif;font-size:12px;font-weight:700;
+  font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;
   color:var(--text);flex:1;
 }
 .filter-count{
@@ -373,7 +373,7 @@ details.filter-highlight[open] .filter-arrow{transform:rotate(180deg);}
     <a href="#" class="sb-item" id="sbPesquisa" style="display:none" onclick="goPage('pesquisa',this);return false;"><span class="ico">💬</span>Pesquisa</a>
   </div>
   <div class="sb-footer">
-    <span id="sbAtual"></span>
+    <span id="sbAtual" style="display:none"></span>
   </div>
 </aside>
 
@@ -431,7 +431,7 @@ details.filter-highlight[open] .filter-arrow{transform:rotate(180deg);}
       </details>
       <div class="krow k4 mb14" id="metaKpis"></div>
       <!-- Funil -->
-      <div class="funnel-card mb14"><div class="funnel-title">Funil de Captação · All Conversions</div><div class="funnel-steps" id="funnelSteps"></div></div>
+      <div class="funnel-card mb14"><div class="funnel-title">Funil de Captação</div><div class="funnel-steps" id="funnelSteps"></div></div>
       <!-- Gráfico Leads · Investimento · CPL -->
       <div class="cc mb14">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:6px;">
@@ -508,16 +508,16 @@ details.filter-highlight[open] .filter-arrow{transform:rotate(180deg);}
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;" class="resumo-split">
         <div style="border-radius:13px;padding:16px 18px;border:1px solid rgba(37,99,235,.3);background:linear-gradient(140deg,rgba(37,99,235,.08),transparent);box-shadow:var(--sh);">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-            <span style="font-family:'Syne';font-weight:800;font-size:13px;color:#2563EB">META ADS</span>
-            <span id="badgeMeta" style="background:rgba(37,99,235,.14);padding:3px 8px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;min-width:28px;min-height:22px;"><img src="metaads.png" alt="Meta" style="height:16px;width:auto;vertical-align:middle" onload="this.style.display='inline'" onerror="this.parentElement.innerHTML='<span style=\'color:#2563EB;font-family:Syne;font-weight:700;font-size:11px\'>f</span>'"></span>
+            <span style="font-family:'DM Sans';font-weight:700;font-size:13px;color:#2563EB">META ADS</span>
+            <span id="badgeMeta" style="background:rgba(37,99,235,.14);padding:3px 8px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;min-width:28px;min-height:22px;"><img src="metaads.png" alt="Meta" style="height:16px;width:auto;vertical-align:middle" onload="this.style.display='inline'" onerror="this.parentElement.innerHTML='<span style=\'color:#2563EB;font-family:DM Sans;font-weight:700;font-size:11px\'>f</span>'"></span>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;" id="resumoMetaSplit"></div>
           <div style="margin-top:12px;font-size:10px;color:var(--muted2)" id="resumoMetaNote"></div>
         </div>
         <div style="border-radius:13px;padding:16px 18px;border:1px solid rgba(234,179,8,.35);background:linear-gradient(140deg,rgba(234,179,8,.10),transparent);box-shadow:var(--sh);">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-            <span style="font-family:'Syne';font-weight:800;font-size:13px;color:#ca8a04">GOOGLE ADS</span>
-            <span id="badgeGoogle" style="background:rgba(234,179,8,.18);padding:3px 8px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;min-width:28px;min-height:22px;"><img src="googleads.png" alt="Google" style="height:16px;width:auto;vertical-align:middle" onload="this.style.display='inline'" onerror="this.parentElement.innerHTML='<span style=\'color:#ca8a04;font-family:Syne;font-weight:700;font-size:11px\'>G</span>'"></span>
+            <span style="font-family:'DM Sans';font-weight:700;font-size:13px;color:#ca8a04">GOOGLE ADS</span>
+            <span id="badgeGoogle" style="background:rgba(234,179,8,.18);padding:3px 8px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;min-width:28px;min-height:22px;"><img src="googleads.png" alt="Google" style="height:16px;width:auto;vertical-align:middle" onload="this.style.display='inline'" onerror="this.parentElement.innerHTML='<span style=\'color:#ca8a04;font-family:DM Sans;font-weight:700;font-size:11px\'>G</span>'"></span>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;" id="resumoGoogleSplit"></div>
           <div style="margin-top:12px;font-size:10px;color:var(--muted2)" id="resumoGoogleNote"></div>
@@ -546,7 +546,7 @@ details.filter-highlight[open] .filter-arrow{transform:rotate(180deg);}
     <div class="page-section" id="page-pesquisa">
       <div class="krow pes-kpis" id="pesKpis"></div>
       <details class="filter-box" style="padding:0">
-        <summary style="padding:12px 14px;cursor:pointer;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:1px;list-style:none;display:flex;align-items:center;justify-content:space-between;user-select:none;">
+        <summary style="padding:12px 14px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:1px;list-style:none;display:flex;align-items:center;justify-content:space-between;user-select:none;">
           Filtrar respostas por origem <span style="font-size:13px;color:var(--muted2)">▾</span>
         </summary>
         <div style="padding:0 14px 12px;">
@@ -598,7 +598,7 @@ details.filter-highlight[open] .filter-arrow{transform:rotate(180deg);}
     <!-- META ADS — HISTÓRICO -->
     <div class="page-section" id="page-meta-hist">
       <div style="margin-bottom:16px">
-        <div style="font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:3px">Meta Ads — Dados Históricos</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:17px;font-weight:700;margin-bottom:3px">Meta Ads — Dados Históricos</div>
         <div style="font-size:12px;color:var(--muted)">Análise mensal · todos os dados da conta</div>
       </div>
       <div class="krow k5 mb14" id="mHistKpis"></div>
@@ -624,7 +624,7 @@ details.filter-highlight[open] .filter-arrow{transform:rotate(180deg);}
     <!-- GOOGLE ADS — HISTÓRICO -->
     <div class="page-section" id="page-google-hist">
       <div style="margin-bottom:16px">
-        <div style="font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:3px">Google Ads — Dados Históricos</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:17px;font-weight:700;margin-bottom:3px">Google Ads — Dados Históricos</div>
         <div style="font-size:12px;color:var(--muted)">Análise mensal · todos os dados da conta</div>
       </div>
       <div class="krow k5 mb14" id="gHistKpis"></div>
@@ -1224,17 +1224,17 @@ function renderResumo(){
   const mCTR = _mdImpressions>0 ? r2(_mdLinkClicks/_mdImpressions*100) : 0;
   const _mdCPL = totLeads>0 ? r2(_mdSpend/totLeads) : null;
   document.getElementById('resumoMetaSplit').innerHTML=`
-    <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:4px">Invest.</div><div style="font-family:'Syne';font-weight:700;font-size:16px">${fR(_mdSpend)}</div></div>
-    <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:4px">Leads</div><div style="font-family:'Syne';font-weight:700;font-size:16px">${fN(totLeads)}</div></div>
-    <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:4px">CPL</div><div style="font-family:'Syne';font-weight:700;font-size:16px" class="${cplCls(_mdCPL)}">${fR(_mdCPL)}</div></div>`;
+    <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:4px">Invest.</div><div style="font-family:'DM Sans';font-weight:700;font-size:16px">${fR(_mdSpend)}</div></div>
+    <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:4px">Leads</div><div style="font-family:'DM Sans';font-weight:700;font-size:16px">${fN(totLeads)}</div></div>
+    <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:4px">CPL</div><div style="font-family:'DM Sans';font-weight:700;font-size:16px" class="${cplCls(_mdCPL)}">${fR(_mdCPL)}</div></div>`;
   document.getElementById('resumoMetaNote').textContent=`CTR ${mCTR.toFixed(2)}% · ${fN(_mdLinkClicks)} cliques · ${fN(_mdImpressions)} impressões`;
 
   // Bloco Google — 3 colunas: Invest / Conv / CPA
   const gCTR = gk?.impressions ? r2((gk.clicks||0)/gk.impressions*100) : 0;
   document.getElementById('resumoGoogleSplit').innerHTML=`
-    <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:4px">Invest.</div><div style="font-family:'Syne';font-weight:700;font-size:16px">${fD(gk?.spend)}</div></div>
-    <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:4px">Conversões</div><div style="font-family:'Syne';font-weight:700;font-size:16px">${fConv(gk?.conversions)}</div></div>
-    <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:4px">CPA</div><div style="font-family:'Syne';font-weight:700;font-size:16px" class="${cpaCls(gk?.cpa)}">${fD(gk?.cpa)}</div></div>`;
+    <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:4px">Invest.</div><div style="font-family:'DM Sans';font-weight:700;font-size:16px">${fD(gk?.spend)}</div></div>
+    <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:4px">Conversões</div><div style="font-family:'DM Sans';font-weight:700;font-size:16px">${fConv(gk?.conversions)}</div></div>
+    <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:4px">CPA</div><div style="font-family:'DM Sans';font-weight:700;font-size:16px" class="${cpaCls(gk?.cpa)}">${fD(gk?.cpa)}</div></div>`;
   document.getElementById('resumoGoogleNote').textContent=`CTR ${gCTR.toFixed(2)}% · ${fN(gk?.clicks||0)} cliques · ${fN(Math.round(gk?.impressions||0))} impressões`;
 
   // Gráfico combinado (Meta azul, Google amarelo)
@@ -2133,7 +2133,8 @@ function renderDiarioCharts(){
     {id:'cr',   ttl:'Connect Rate (%)', suffix:'%', data:()=>md.connect_rate},
     {id:'tx_cv',ttl:'Taxa Conversão (%)',suffix:'%', data:()=>md.tx_conv},
     {id:'cpe',  ttl:'Custo por Engajamento (R$)', suffix:'', fmt:v=>v!=null?'R$'+v.toFixed(2):null, data:()=>md.cpe},
-  ];
+
+  ].filter(m=>FUNIL_PAGE_VIEW||!['cr','tx_cv'].includes(m.id)); // sem landing page: Connect Rate/Tx.Conv não se aplicam
 
   const el=document.getElementById('dailyCharts');
   el.innerHTML=METRICS.map(m=>{
@@ -2977,13 +2978,33 @@ function toggleWB(el){
     var img = el.querySelector('img');
     if(!img) return;
     img.onerror = function(){
-      el.innerHTML = '<span style="color:'+cfg.color+';font-family:Syne,sans-serif;font-weight:700;font-size:11px">'+cfg.letter+'</span>';
+      el.innerHTML = '<span style="color:'+cfg.color+';font-family:DM Sans,sans-serif;font-weight:700;font-size:11px">'+cfg.letter+'</span>';
     };
     // Se já falhou antes do script rodar
     if(img.naturalWidth === 0 && img.complete){
-      el.innerHTML = '<span style="color:'+cfg.color+';font-family:Syne,sans-serif;font-weight:700;font-size:11px">'+cfg.letter+'</span>';
+      el.innerHTML = '<span style="color:'+cfg.color+';font-family:DM Sans,sans-serif;font-weight:700;font-size:11px">'+cfg.letter+'</span>';
     }
   });
+})();
+</script>
+<script>
+// Sem landing page (FUNIL_PAGE_VIEW=false): esconde colunas PV / C.Rate / Tx.Conv, que ficariam zeradas em vermelho
+(function(){
+  if(typeof FUNIL_PAGE_VIEW!=='undefined' && FUNIL_PAGE_VIEW) return;
+  const L=['PV','C.Rate','Tx.Conv'];
+  function fix(){
+    document.querySelectorAll('table').forEach(t=>{
+      const hr=t.querySelector('tr'); if(!hr) return;
+      const idx=[]; [...hr.children].forEach((c,i)=>{ if(L.includes(c.textContent.trim())) idx.push(i); });
+      if(!idx.length) return;
+      t.querySelectorAll(':scope > thead > tr, :scope > tbody > tr, :scope > tfoot > tr, :scope > tr').forEach(r=>{
+        if(r.children.length!==hr.children.length) return;
+        idx.forEach(i=>{ if(r.children[i]) r.children[i].style.display='none'; });
+      });
+    });
+  }
+  let tm; new MutationObserver(()=>{ clearTimeout(tm); tm=setTimeout(fix,30); }).observe(document.body,{childList:true,subtree:true});
+  fix();
 })();
 </script>
 </body>
